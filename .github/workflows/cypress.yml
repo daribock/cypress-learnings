@@ -1,0 +1,28 @@
+name: Cypress Tests
+
+on: push
+
+jobs:
+  cypress-run-starting-project:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run 01-starting-project
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: cypress-end-to-end-testing-getting-started/01-starting-project
+          start: npm run dev
+
+  cypress-run-basics-starting-project:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress run 02-basics-starting-project
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: cypress-end-to-end-testing-getting-started/02-basics-starting-project
+          start: npm run dev
